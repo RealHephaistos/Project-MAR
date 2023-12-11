@@ -232,7 +232,8 @@ namespace StarterAssets
 				// fall timeout
 				if (_fallTimeoutDelta >= 0.0f)
 				{
-					_fallTimeoutDelta -= Time.deltaTime;
+					
+				_input.jump = false;
 				}
 
 				// if we are not grounded, do not jump
