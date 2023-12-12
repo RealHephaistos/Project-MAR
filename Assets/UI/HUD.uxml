@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&amp;guid=68fe71a01afc17843a6754ea1ca60a0c&amp;type=3#arrow-down&apos;); -unity-slice-left: 1; -unity-slice-top: 1; -unity-slice-right: 1; -unity-slice-bottom: 1; -unity-slice-scale: 0; -unity-background-scale-mode: scale-to-fit; width: 45px; height: 45px; transform-origin: center; left: 50%; border-left-color: rgba(19, 233, 32, 0); border-right-color: rgba(19, 233, 32, 0); border-top-color: rgba(19, 233, 32, 0); border-bottom-color: rgba(19, 233, 32, 0); border-top-width: 20px; border-right-width: 20px; border-bottom-width: 20px; border-left-width: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; opacity: 1; -unity-background-image-tint-color: rgb(1, 255, 15);" />
+    </ui:VisualElement>
+</ui:UXML>
