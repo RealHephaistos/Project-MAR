@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; height: 79px;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="timer" style="display: flex;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tagsRemoved" />
+    </ui:VisualElement>
+    <ui:VisualElement name="reticle" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/2D%20Assets/pngwing.com.png?fileID=2800000&amp;guid=11c38eacddc34784892144d8f6cbd157&amp;type=3#pngwing.com&apos;); width: 100px; height: 100px; align-self: center; cursor: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1304905567622442630&amp;guid=cc5c690116ce9474fb955037e5664a42&amp;type=3#arrow-down@2x&apos;); -unity-background-scale-mode: scale-to-fit; position: absolute; left: 50%; top: 50%; right: 0; bottom: 0;" />
+    <ui:ProgressBar value="22" title="Water" name="waterTankBar" />
+</ui:UXML>
