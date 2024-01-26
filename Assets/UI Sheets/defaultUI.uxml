@@ -3,5 +3,5 @@
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="timer" style="display: flex;" />
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tagsRemoved" />
     </ui:VisualElement>
-    <ui:ProgressBar value="100" title="Water" name="waterTankBar" />
+    <ui:ProgressBar value="100" title="Water" name="waterTankProgressBar" />
 </ui:UXML>
