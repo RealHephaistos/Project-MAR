@@ -1104,9 +1104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e87d1e8e7a98434db9a092217b46348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWaterTankLevel: 0
-  waterTankRefillRate: 0
+  maxWaterTankLevel: 100
+  waterTankRefillRate: 3
+  mainUI: {fileID: 619720932}
   baloon: {fileID: 244167805095531511, guid: 49f56abf7295dfb4abc5c8beb827c413, type: 3}
+  minWaterCost: 20
   chargeRate: 7
   minForce: 2
   maxForce: 10
