@@ -19,7 +19,7 @@ public class WaterGunController : MonoBehaviour
     private Rigidbody newBaloonRigidbody;
 
     private bool isCharging = false;
-    [SerializeField] private float minWaterCost = 20f;
+    [SerializeField] private float minWaterCostMain = 20f;
     [SerializeField] private float chargeRate = 1.0f;
     [SerializeField] private float minForce = 2f;
     [SerializeField] private float maxForce = 10f;
@@ -67,7 +67,7 @@ public class WaterGunController : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0) && currentWaterTankLevel >= minWaterCost)
+            if (Input.GetMouseButtonDown(0) && currentWaterTankLevel >= minWaterCostMain)
             {
                 onWaterGunMainCharge();
                 Debug.Log("Charging");
@@ -94,11 +94,14 @@ public class WaterGunController : MonoBehaviour
         newBaloonRigidbody.isKinematic = true;
         // Start charging
         isCharging = true;
-        currentWaterTankLevel -= minWaterCost;
+        currentWaterTankLevel -= minWaterCostMain;
     }
 
     public void onWaterGunMainRelease()
     {
+        // Set the damage component of the baloon
+        newBaloon.GetComponent<Damager>().SetDamage(currentForce);
+
         // Launch the baloon
         Debug.Log("Force: " + currentForce);
         newBaloonRigidbody.isKinematic = false;

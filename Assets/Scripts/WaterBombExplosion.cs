@@ -6,19 +6,7 @@ public class WaterBombExplosion : MonoBehaviour
 {
 
     [SerializeField] private GameObject splashDecalPrefab;
-    private float splashDecalOffset = 0.01f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private float splashDecalOffset = -0.025f;
 
     private void OnCollisionEnter(Collision collision)
     {

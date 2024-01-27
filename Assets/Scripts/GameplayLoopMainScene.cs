@@ -31,6 +31,8 @@ public class GameplayLoopMainScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
         mainUI.rootVisualElement.style.display = DisplayStyle.None;
         gameOverUI.rootVisualElement.style.display = DisplayStyle.None;
         countDownLabel = startUI.rootVisualElement.Q<Label>("countDownLabel");
@@ -136,5 +138,11 @@ public class GameplayLoopMainScene : MonoBehaviour
     private int CountGraffiti()
     {
         return GameObject.FindGameObjectsWithTag("Decal").Length;
+    }
+
+    public void GraffitiCleaned()
+    {
+        currentNbGrafitti--;
+        scoreLabel.text = currentNbGrafitti + "/" + maxNbGrafitti + " Max Graffiti";
     }
 }

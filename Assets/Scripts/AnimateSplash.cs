@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class AnimateSplash : MonoBehaviour
 {
-    private Material splashShader;
+    private Material splashMaterial;
     [SerializeField] private float fadeSpeed = 0.1f;
 
     [SerializeField] private float fadeDelay = 3f;
@@ -17,12 +17,15 @@ public class AnimateSplash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        splashShader = GetComponent<DecalProjector>().material;
-        splashShader.SetFloat("_Opacity", 1f);
+        // Unfortunatly we have to copy the material because it's a shared material
+        // and we can't use MaterialPropertyBlocks with DecalProjectors yet :(
+        splashMaterial = new Material(GetComponent<DecalProjector>().material);
+        GetComponent<DecalProjector>().material = splashMaterial;
+        splashMaterial.SetFloat("_Opacity", 1f);
         
         // Assign a random noise scale
         minNoiseScale = UnityEngine.Random.Range(4f, 8f);
-        splashShader.SetFloat("_NoiseScale", minNoiseScale);
+        splashMaterial.SetFloat("_NoiseScale", minNoiseScale);
     }
 
     // Update is called once per frame
@@ -33,10 +36,10 @@ public class AnimateSplash : MonoBehaviour
         {
             fadeDelay -= Time.deltaTime;
         }
-        else if(splashShader.GetFloat("_Opacity") > 0)
+        else if(splashMaterial.GetFloat("_Opacity") > 0)
         {
             
-            splashShader.SetFloat("_Opacity", splashShader.GetFloat("_Opacity") - fadeSpeed * Time.deltaTime);
+            splashMaterial.SetFloat("_Opacity", splashMaterial.GetFloat("_Opacity") - fadeSpeed * Time.deltaTime);
         }
         else
         {
@@ -44,6 +47,6 @@ public class AnimateSplash : MonoBehaviour
         }
 
         // Animate the shape
-        splashShader.SetFloat("_NoiseScale", splashShader.GetFloat("_NoiseScale") + animationSpeed * Time.deltaTime);
+        splashMaterial.SetFloat("_NoiseScale", splashMaterial.GetFloat("_NoiseScale") + animationSpeed * Time.deltaTime);
     }
 }
