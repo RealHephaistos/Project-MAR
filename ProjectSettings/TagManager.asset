@@ -7,11 +7,12 @@ TagManager:
   - CinemachineTarget
   - Weapon
   - Decal
+  - WaterBomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Projectile
   - Water
   - UI
   - 
