@@ -23,7 +23,7 @@ public class GameplayLoopMainScene : MonoBehaviour
     [SerializeField] private float gameTime = 60f;
     private float currentTime;
 
-    [SerializeField] private int maxNbGrafitti;
+    private int maxNbGrafitti;
     private int currentNbGrafitti;
 
     [SerializeField] private GameObject player;
@@ -40,6 +40,8 @@ public class GameplayLoopMainScene : MonoBehaviour
         timerLabel = mainUI.rootVisualElement.Q<Label>("timerLabel");
         scoreLabel = mainUI.rootVisualElement.Q<Label>("scoreLabel");
 
+        maxNbGrafitti = CountGraffiti();
+        currentNbGrafitti = maxNbGrafitti;
         timerLabel.text = currentTime.ToString(currentTime + "s/" + gameTime + "s");
         scoreLabel.text = currentNbGrafitti + "/" + maxNbGrafitti + " Max Graffiti";
 
@@ -129,5 +131,10 @@ public class GameplayLoopMainScene : MonoBehaviour
     {
         countDownLabel.text = "";
         startUI.rootVisualElement.style.display = DisplayStyle.None;
+    }
+
+    private int CountGraffiti()
+    {
+        return GameObject.FindGameObjectsWithTag("Decal").Length;
     }
 }
